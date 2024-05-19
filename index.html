@@ -1,0 +1,771 @@
+<html><head><link rel="stylesheet" href="https://cdn.plyr.io/3.6.12/plyr.css" />
+	<script src="https://cdn.plyr.io/3.6.12/plyr.js"></script>
+	<script>
+		const player = new Plyr('#player', {
+		  controls: ['play', 'progress', 'current-time', 'mute', 'volume'],
+		  modestbranding: true,
+		  rel: 0,
+		  fs: 1,
+		  hl: 'en',
+		  allow: ['accelerometer', 'autoplay', 'clipboard-write', 'encrypted-media', 'gyroscope', 'picture-in-picture'],
+		  allowfullscreen: true,
+		});
+	  </script>
+	
+	<script src="func.js"></script><link rel="stylesheet" href="https://cdn.plyr.io/3.6.12/plyr.css"></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>CÁC VIDEO BÀI GIẢNG CỦA THẦY</title>  	<style>
+
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+
+
+
+
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80px; /* adjust this width as needed */
+    height: 40px; /* adjust this height as needed */
+    background-color: rgba(255, 255, 255, 0); /* transparent */
+    z-index: 1;
+        }
+		.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+.overlay-block {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 30px; /* Adjust size of the overlay block */
+            height: 30px; /* Adjust size of the overlay block */
+            background: red; /* Make it black */
+            z-index: 1;
+}
+iframe {
+    width: 100%;
+    height: 315px;
+    border: none;
+}
+
+.controls {
+    text-align: center;
+    margin-top: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="ec5fdb0a-46e8-4f5b-86ce-027dc83cb6d2" class="page sans"><header><img class="page-cover-image" src="Screenshot_2024-05-17_122904.png" style="object-position:center 52.44%"/><h1 class="page-title">CÁC VIDEO BÀI GIẢNG CỦA THẦY</h1><p class="page-description"></p></header><div class="page-body"><div id="f2282480-fca4-4968-adaa-ee075178537d" class="column-list"><div id="4c51c919-2540-4b7f-a3b4-16a05425e74c" style="width:12.5%" class="column"><p id="52854f1b-8028-49b2-bdfc-3fddeb85e12f" class="">
+
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="ec0b145e-7b57-483d-bf0c-c50689a7a83d"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/reorder_gray.svg"/></div><div  width="1000">Menu       </div></figure><p id="3c9089f6-fb17-4db1-af06-c3ffe23e3763" class="">Page</p><figure id="2e39bffa-54da-4f85-a45f-0de26ee0c25e" class="link-to-page"><a href="index2.html"><img class="icon" src="https://www.notion.so/icons/user-circle_gray.svg"/>Tài Khoản</a></figure><figure id="14f3bced-21dc-47fa-8f88-729e1e521b1a" class="link-to-page"><a href="index3.html"><img class="icon" src="Screenshot_2024-05-17_123029.png"/>Thầy long</a></figure><p id="57e09f17-333f-47a9-b487-9f8bea7ebfb3" class="">
+	</p></div><div id="8876be64-dcd2-4427-a2f0-e2c51c323c54" style="width:87.5%" class="column"><h1 id="8e77851b-97c1-49ca-84ce-6535ab39b1c6" class="">Toán 9</h1><h2 id="f32bbb54-afd9-4934-abce-7ade3252c735" class="">Đại Số</h2><ul id="3766c2e3-9b81-4176-a07d-8747f88529c8" class="toggle"><li><details open=""><summary>Chương 1: </summary><ul id="8895c20d-0b02-4c4b-8b82-005402042d4c" class="toggle"><li><details open="">
+<summary>Bài 1: </summary><div ><figure id="bf5eb931-19df-43ec-b780-c88ff784879f"><div class="source"><iframe width="1280" height="720" src="http://www.youtube.com/watch?v=NQ7QHQMtj5k&t=204s?theme=light&hl=en_US&fs=0&hd=1&ap=%2526fmt%3D22&showsearch=0&showinfo=0&modestbranding=0&rel=0&disablekb=1&iv_load_policy=3&cc_load_policy=1&autoplay=1&start=0&loop=1&autohide=1" frameborder="0" allowfullscreen title="RTX 3050 6GB: Bạn chưa hiểu NVidia và Tôi không mua VGA này // DuyViu" frameborder="0" 
+	frameborder="0"
+	allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+	allowfullscreen
+	class="no-right-click">
+
+
+</iframe></div></figure></div></details></li></ul><ul id="efd3aa5b-3e63-48da-beda-6c5c639e2eeb" class="toggle"><li><details open="">
+	<summary>Bài 1.2: </summary><iframe src="./assets/index4.html" frameborder="0" allowfullscreen allow-scripts></iframe><ul id="efd3aa5b-3e63-48da-beda-6c5c639e2eeb" class="toggle"><li><details open="">
+
+<summary>Bài 2:</summary></details></li></ul><ul id="1736b26a-1a0c-4ff2-b8ed-2822dcd53e97" class="toggle"><li><details open="">
+<summary>Bài 3:</summary></details></li></ul><ul id="7bbcf1da-2aa8-4805-a817-833a1768027d" class="toggle"><li><details open="">
+<summary>Bài 4:</summary></details></li></ul><ul id="f2c02f98-fb0f-4a36-a12f-07eaba2343f6" class="toggle"><li><details open="">
+<summary>Bài 5:</summary></details></li></ul><ul id="8273b010-a331-4c47-b5b7-687e0cf11c06" class="toggle"><li><details open="">
+<summary>Ôn Tập Cuối Chương:</summary></details></li></ul></details></li></ul><ul id="b87d1e7f-5621-4bbd-83c8-d0f059b5f380" class="toggle"><li><details open="">
+<summary>Chương 2: </summary><ul id="e2dbb7af-cc67-4f72-898d-a8c087592ebc" class="toggle"><li><details open=""><summary>Bài 1: </summary></details></li></ul><ul id="86253bc5-dd89-4493-ac3d-2c1b1797a936" class="toggle"><li><details open=""><summary>Bài 2:</summary></details></li></ul><ul id="44c8ca32-7762-4c7f-9873-af91d85a6d8b" class="toggle"><li><details open=""><summary>Bài 3:</summary></details></li></ul><ul id="3ab1de5f-823b-4eb3-80fd-5b0b6dc003cd" class="toggle"><li><details open=""><summary>Bài 4:</summary></details></li></ul><ul id="471c86cf-89e2-4411-b0cb-a866245c005e" class="toggle"><li><details open=""><summary>Bài 5:</summary></details></li></ul><ul id="672412a1-fcb0-4c95-9a7c-1188c9cb702c" class="toggle"><li><details open=""><summary>Ôn Tập Cuối Chương:</summary></details></li></ul><p id="a4cbd38d-3abe-4eee-81fc-00a915fae1f6" class="">
+</p><p id="9783953e-372a-49ba-98bb-be461a486bb1" class="">
+</p></details></li></ul><h2 id="e8df8ca8-5d44-4f53-9dc5-6c3cff9ab4c8" class="">Hình Học</h2><ul id="7631f2ff-bcc6-47d4-96ea-c7ff5c4cf208" class="toggle"><li><details open=""><summary>Chương 1: </summary><ul id="c3c7410e-6631-4b45-9032-2cb580ccffc3" class="toggle"><li><details open=""><summary>Bài 1: </summary></details></li></ul><ul id="f868855c-5812-40ef-9305-638edf4814b7" class="toggle"><li><details open=""><summary>Bài 2:</summary></details></li></ul><ul id="a3133eba-350c-4f97-8148-ac7baacec233" class="toggle"><li><details open=""><summary>Bài 3:</summary></details></li></ul><ul id="da7ac93a-c44b-4f34-bba9-481d9115204b" class="toggle"><li><details open=""><summary>Bài 4:</summary></details></li></ul><ul id="1c3345c4-5e89-4385-8b54-479dbdcb1034" class="toggle"><li><details open=""><summary>Bài 5:</summary></details></li></ul><ul id="cde7e76a-cf36-4b5e-a5ae-ab6953f5b928" class="toggle"><li><details open=""><summary>Ôn Tập Cuối Chương:</summary></details></li></ul><p id="86fa1aa9-54c0-4c18-b52c-09992c648493" class="">
+</p><p id="b8b67562-1c05-416f-8b77-6a910e6bc904" class="">
+</p></details></li></ul><ul id="b89381e4-6d44-4aa2-9962-4627ae08ad27" class="toggle"><li><details open=""><summary>Chương 2: </summary><ul id="94fc7ce8-4719-4b90-9dd1-5707465f3195" class="toggle"><li><details open=""><summary>Bài 1: </summary></details></li></ul><ul id="9916d1de-9f89-4624-b7eb-9e041e3316b0" class="toggle"><li><details open=""><summary>Bài 2:</summary></details></li></ul><ul id="d536237e-d3c2-4968-ae8f-011206f51b3b" class="toggle"><li><details open=""><summary>Bài 3:</summary></details></li></ul><ul id="bd949c84-0a88-4aa5-ac70-c652416285d2" class="toggle"><li><details open=""><summary>Bài 4:</summary></details></li></ul><ul id="11b5d7dd-75c6-4760-a8dd-4795ea151238" class="toggle"><li><details open=""><summary>Bài 5:</summary></details></li></ul><ul id="80c38772-570b-4d98-a036-2e6a3d7cd74a" class="toggle"><li><details open=""><summary>Ôn Tập Cuối Chương:</summary></details></li></ul><p id="a594eb1a-0250-4a09-9ad7-91379c1f3c90" class="">
+</p><p id="28fa6a69-ffc1-4c6e-9f57-193013966415" class="">
+</p></details></li></ul></div></div><p id="f3da6671-1e7c-4cf9-8344-15e6ce32867f" class=""> <div class="indented"><p id="2f91cf07-016e-400e-ba07-64d453ebf89f" class="">
+</p><p id="71f38e60-69d9-43bb-85aa-68260f32ce90" class="">
+</p></div></p><p id="2a00a176-5598-4c72-a41c-69a163006359" class="">
+</p><p id="3fef92ff-c30d-41f2-b855-ab771ca7ed0e" class="">
+</p><p id="f91d778d-08ec-494e-9d19-5d8dde1b91e4" class=""><div class="indented"><p id="79b71364-1065-485e-9cab-aeaff1438ee0" class="">
+</p><p id="4f107f52-009d-44de-a633-23b90c2f3aa2" class="">
+</p></div></p><p id="38771cff-633c-4b6f-98e1-e54bf9bcc5ea" class="">
+</p><p id="f5d6a6fb-c017-4b0b-bbca-ea674365bdce" class="">
+</p><p id="fe560ac9-46a5-4c14-ba63-186c576b8656" class=""><div class="indented"><p id="71b2d340-5b97-400c-9f10-205187596da7" class="">
+</p><p id="bef9acc6-48f3-4b3d-a18b-6932a830467f" class="">
+</p></div></p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

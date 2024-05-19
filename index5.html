@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .menu {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: rgba(51, 51, 51, 0.5); /* Đặt màu nền với độ trong suốt */
+            animation: fadein 2s; /* Thêm animation fade in */
+            animation-fill-mode: forwards; /* Đảm bảo rằng trạng thái cuối cùng của animation sẽ được giữ lại */
+        }
+        .menu li {
+            float: left;
+        }
+        .menu li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        .menu li a:hover {
+            background-color: #111;
+        }
+        .menu.fade-out {
+            animation: fadeout 2s; /* Thêm animation fade out */
+            animation-fill-mode: forwards; /* Đảm bảo rằng trạng thái cuối cùng của animation sẽ được giữ lại */
+        }
+        @keyframes fadein {
+            from {
+                opacity: 0; /* Bắt đầu với độ trong suốt bằng 0 */
+            }
+            to {
+                opacity: 1; /* Kết thúc với độ trong suốt bằng 1 */
+            }
+        }
+        #background {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.5); /* Màu nền đen với độ trong suốt 0.5 */
+        }
+        #document {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        @keyframes fadeout {
+            from {
+                opacity: 1; /* Bắt đầu với độ trong suốt bằng 1 */
+            }
+            to {
+                opacity: 0; /* Kết thúc với độ trong suốt bằng 0 */
+            }
+        }
+    </style>
+</head>
+<body>
+    <ul class="menu">
+		<li><a href="#" onclick="changeIframe('index2.html')">Tài Khoản 1</a></li>
+        <li><a href="#" onclick="changeIframe('index.html')">Tài Liệu Học Tập</a></li>
+
+
+        <li><a href="#" onclick="showVideo()"><i class="fa fa-video"></i> Video Học Tập</a></li>
+        <li><a href="#"><i class="fa fa-sign-out"></i> Đăng xuất</a></li>
+    </ul>
+	<div id="background">
+		<iframe src="index.html" id="document" allow-scripts></iframe>
+	</div>
+    <script>
+		function changeIframe(src) {
+            // Thay đổi đường dẫn của iframe
+            document.querySelector('#document').src = src;
+        }
+        function showVideo() {
+            // Hiển thị hoặc ẩn phần nhúng khác
+            document.querySelector('.menu').classList.add('fade-out'); // Thêm lớp fade-out để kích hoạt animation fade out
+            setTimeout(function() {
+                // Thực hiện hành động sau khi animation fade out hoàn tất
+            }, 2000); // Thời gian animation fade out là 2s
+        }
+    </script>
+</body>
+</html>
